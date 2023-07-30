@@ -464,8 +464,8 @@ label {
 } 
 
 .body {
-    color: white;
-    background: linear-gradient(90deg, rgba(56,0,73,1) 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, rgba(56,0,73,1) 100%);
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -503,6 +503,8 @@ label {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    border-radius: 8px;
+    background-color: var(--tg-theme-bg-color);
 }
 
 .card-image-wrapper {
@@ -535,7 +537,7 @@ label {
     text-align: center;
     width: 100%;
     font-weight: 700;
-    color: #FFF;
+    color: var(--tg-theme-text-color);
 }
 
 .card-foot {
@@ -545,11 +547,11 @@ label {
 }
 
 .add-btn {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    padding: 12px 28px;
+    color: var(--tg-theme-button-text-color);
+    background-color: var(--tg-theme-button-color);
+    padding: 12px 0;
+    width: 100%;
     font-size: 16px;
     font-weight: 700;
     border-radius: 8px;
-    box-shadow: 0 0 15px 5px rgba(156, 0, 204, 0.279);
 }
