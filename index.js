@@ -171,6 +171,8 @@ const renderCards = async () => {
     });
 
     Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+    Telegram.WebApp.impactOccurred('heavy');
 }
 
 renderCards();
