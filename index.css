@@ -521,7 +521,7 @@ label {
 }
 
 .main {
-    display: none;
+    display: flex;
     flex-direction: column;
 }
 
@@ -612,10 +612,18 @@ label {
 }
 
 .form {
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 20px 10px;
     gap: 24px;
+}
+
+.body.isForm .form {
+    display: flex;
+}
+
+.body.isForm .main {
+    display: none;
 }
 
 .input-wrapper {
