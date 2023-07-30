@@ -177,17 +177,25 @@ const handleAddClick = (e) => {
    }
 }
 
+const shopBtnHanlder = () => {
+    document.querySelector('.body').classList.add('isOrder');
+    renderCart();
+    state = 'isOrder';
+    getMainButton(state);
+}
+
+const orderBtnHandler = () => {
+    const data = localStorage.getItem('cart');
+    Telegram.WebApp.sendData(data);
+}
+
 const getMainButton = (state) => {
     if (state === 'isOrder') {
-        Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
-        });
+        Telegram.WebApp.MainButton.offClick(shopBtnHanlder);
+        Telegram.WebApp.MainButton.setText('Оформить заказ').show();
+        Telegram.WebApp.MainButton.onClick(orderBtnHandler);
     } else {
-        Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
-            document.querySelector('.body').classList.add('isOrder');
-            renderCart();
-            state = 'isOrder';
-            getMainButton(state);
-        });
+        Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(shopBtnHanlder);
     }
 }
 
