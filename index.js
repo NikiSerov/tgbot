@@ -146,11 +146,11 @@ const removeProductFromLS = (id) => {
 
 const renderCart = () => {
     const cart = document.querySelector('.cart');
-    const productCart = JSON.parse(localStorage.getItem('card'));
+    const productCart = JSON.parse(localStorage.getItem('cart'));
     const orderCardsHTML = productCart.reduce((acc, cv) => {
         return acc + createOrderCardHTML({...cv});
     }, '');
-    cart.innerHTML = 'HUY V GOVNE';
+    cart.innerHTML = orderCardsHTML;
 }
 
 const handleAddClick = (e) => {
