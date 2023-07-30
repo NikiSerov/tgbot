@@ -182,16 +182,15 @@ const getMainButton = (state) => {
         Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
             const data = localStorage.getItem('cart');
             Telegram.WebApp.sendData(data);
-            Telegram.WebApp.close();
         });
-        return;
+    } else {
+        Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
+            document.querySelector('.body').classList.add('isOrder');
+            renderCart();
+            state = 'isOrder';
+            getMainButton(state);
+        });
     }
-    Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
-        document.querySelector('.body').classList.add('isOrder');
-        renderCart();
-        state = 'isOrder';
-        getMainButton(state);
-    });
 }
 
 const initTG = () => {
