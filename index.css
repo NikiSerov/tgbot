@@ -479,6 +479,11 @@ label {
     min-height: 100vh;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -486,11 +491,11 @@ label {
     padding: 20px 0;
 }
 
-.shop-name {
+.header-title {
     font-size: 18px;
 }
 
-.main {
+.cards-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 14px;
@@ -554,4 +559,8 @@ label {
     font-size: 16px;
     font-weight: 700;
     border-radius: 8px;
+}
+
+.form {
+    display: none;
 }
