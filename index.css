@@ -637,7 +637,7 @@ label {
 }
 
 .orderPage {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 24px;
 }

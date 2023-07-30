@@ -172,7 +172,6 @@ const handleAddClick = (e) => {
         setTimeout(() => {
             btn.classList.remove('animateClick')
         }, 310);
-        renderCart()
    }
 }
 
@@ -182,11 +181,7 @@ const initTG = () => {
 
     Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
         document.querySelector('.body').classList.add('isOrder');
-        const productCart = JSON.parse(localStorage.getItem('card'));
-        const orderCardsHTML = productCart.reduce((acc, cv) => {
-            return acc + createOrderCardHTML({...cv});
-        }, '');
-        document.querySelector('.cart').innerHTML = orderCardsHTML;
+        renderCart();
     });
 }
 
