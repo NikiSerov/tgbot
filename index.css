@@ -492,7 +492,7 @@ label {
 }
 
 .header-title {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .cards-container {
@@ -559,6 +559,10 @@ label {
     font-size: 16px;
     font-weight: 700;
     border-radius: 8px;
+}
+
+.add-btn.remove {
+    background-color: rgb(118, 23, 23);
 }
 
 .form {
