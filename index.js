@@ -1,3 +1,5 @@
+let state = 'shop';
+
 const products = [
     {
         name: '1800х450х450 IP31 без бок панелей RAL7035',
@@ -175,15 +177,28 @@ const handleAddClick = (e) => {
    }
 }
 
+const getMainButton = (state) => {
+    if (state === 'isOrder') {
+        Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
+            const data = localStorage.getItem('cart');
+            Telegram.WebApp.sendData(data);
+            Telegram.WebApp.close();
+        });
+        return;
+    }
+    Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
+        document.querySelector('.body').classList.add('isOrder');
+        renderCart();
+        state = 'isOrder';
+    });
+}
+
 const initTG = () => {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
     localStorage.setItem('cart', []);
 
-    Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
-        document.querySelector('.body').classList.add('isOrder');
-        renderCart();
-    });
+    getMainButton(state);
 }
 
 const renderCards = async () => {
