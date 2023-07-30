@@ -178,6 +178,7 @@ const handleAddClick = (e) => {
 const initTG = () => {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
+    localStorage.setItem('cart', []);
 
     Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
         document.querySelector('.body').classList.add('isOrder');
