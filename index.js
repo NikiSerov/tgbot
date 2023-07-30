@@ -185,7 +185,7 @@ const shopBtnHanlder = () => {
 }
 
 const orderBtnHandler = () => {
-    const cart = localStorage.getItem('cart');
+    const cart = JSON.parse(localStorage.getItem('cart'));
     const organiztionName = document.getElementById('organization-name').value;
     const contactName = document.getElementById('contact-name').value;
     const contactNumber = document.getElementById('contact-number').value;
@@ -195,7 +195,7 @@ const orderBtnHandler = () => {
         contactName,
         contactNumber
     }
-    Telegram.WebApp.sendData(data);
+    Telegram.WebApp.sendData(JSON.stringify(data));
 }
 
 const getMainButton = (state) => {
