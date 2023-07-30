@@ -506,7 +506,7 @@ label {
 
 .body {
     color: var(--tg-theme-text-color);
-    background: var(--tg-theme-bg-color);
+    background: black;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -521,7 +521,7 @@ label {
 }
 
 .main {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -612,5 +612,27 @@ label {
 }
 
 .form {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 24px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.input-label {
+    color: var(--tg-theme-hint-color);
+    font-size: 16px;
+}
+
+.input {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: var(--tg-theme-secondary-bg-color);
 }

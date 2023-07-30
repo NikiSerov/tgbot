@@ -161,7 +161,6 @@ const initTG = () => {
     Telegram.WebApp.expand();
 
     Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
-        Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
 }
