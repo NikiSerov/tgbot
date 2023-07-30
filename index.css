@@ -378,6 +378,9 @@ template {
     display: none;
 }
 
+/* KEYFRAMES */
+/* --------------------------------------------------------------- */
+
 @keyframes pulse {
     0% {
         transform: scale(.97);
@@ -419,6 +422,29 @@ template {
         box-shadow: 0 0 0 0 transparent;
     }
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* --------------------------------------------------------------- */
+
 
 * {
     -webkit-tap-highlight-color: transparent;
@@ -616,6 +642,7 @@ label {
     flex-direction: column;
     padding: 20px 10px;
     gap: 24px;
+    animation: fadeIn 0.4s ease;
 }
 
 .body.isForm .form {
