@@ -137,6 +137,7 @@ const removeProductFromLS = (id) => {
 const handleAddClick = (e) => {
    const btn = e.target;
    const id = btn.getAttribute('data-id');
+   Telegram.WebApp.impactOccurred('heavy');
 
    if (btn.classList.contains('remove')) {
         removeProductFromLS(id);
@@ -172,7 +173,6 @@ const renderCards = async () => {
 
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
-    Telegram.WebApp.impactOccurred('heavy');
 }
 
 renderCards();
