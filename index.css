@@ -532,7 +532,7 @@ label {
 
 .body {
     color: var(--tg-theme-text-color);
-    background: black;
+    background: var(--tg-theme-bg-color);
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -576,7 +576,6 @@ label {
     flex-direction: column;
     gap: 16px;
     border-radius: 8px;
-    background-color: var(--tg-theme-bg-color);
 }
 
 .card-image-wrapper {
