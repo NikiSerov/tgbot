@@ -384,13 +384,17 @@ template {
         box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
     }
 
-    70% {
+    50% {
         transform: scale(1);
         box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
     }
 
-    100% {
+    80% {
         transform: scale(.95);
+    }
+
+    100% {
+        transform: scale(1);
         box-shadow: 0 0 0 0 transparent;
     }
 }
@@ -401,13 +405,17 @@ template {
         box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
     }
 
-    70% {
+    50% {
         transform: scale(1);
         box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.2);
     }
 
-    100% {
+    80% {
         transform: scale(.95);
+    }
+
+    100% {
+        transform: scale(1);
         box-shadow: 0 0 0 0 transparent;
     }
 }
@@ -600,7 +608,7 @@ label {
 }
 
 .add-btn.animateClick {
-    animation: pulse 0.3s ease;
+    animation: pulse 0.3s ease-in-out;
 }
 
 .form {
