@@ -218,7 +218,7 @@ const initTG = () => {
 
     Telegram.WebApp.BackButton.onClick(() => {
         state = 'main';
-        getMainButton(state);
+        getMainButton();
         Telegram.WebApp.MainButton.offClick(shopBtnHanlder);
         Telegram.WebApp.MainButton.setText('Оформить заказ').show();
         Telegram.WebApp.MainButton.onClick(orderBtnHandler);
