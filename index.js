@@ -150,6 +150,7 @@ const removeProductFromLS = (id) => {
 const handleAddClick = (e) => {
    const btn = e.target;
    const id = btn.getAttribute('data-id');
+   Telegram.WebApp.HapticFeedback.impactOccured('heavy');
 
    if (btn.classList.contains('remove')) {
         removeProductFromLS(id);
