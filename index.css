@@ -656,7 +656,6 @@ label {
 .cart {
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
 
 .form {
@@ -706,7 +705,7 @@ label {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--tg-theme-hint-color);
-    padding: 10px;
+    padding: 20px 10px;
 }
 
 .orderCard-image-wrapper {
