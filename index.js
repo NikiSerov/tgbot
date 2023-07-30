@@ -190,6 +190,7 @@ const getMainButton = (state) => {
         document.querySelector('.body').classList.add('isOrder');
         renderCart();
         state = 'isOrder';
+        getMainButton(state);
     });
 }
 
