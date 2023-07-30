@@ -205,7 +205,9 @@ const getMainButton = () => {
         Telegram.WebApp.MainButton.setText('Оформить заказ').show();
         Telegram.WebApp.MainButton.onClick(orderBtnHandler);
     } else {
-        Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(shopBtnHanlder);
+        Telegram.WebApp.MainButton.offClick(orderBtnHandler);
+        Telegram.WebApp.MainButton.setText('Мой заказ').show();
+        Telegram.WebApp.MainButton.onClick(shopBtnHanlder);
     }
 }
 
@@ -217,8 +219,11 @@ const initTG = () => {
     Telegram.WebApp.BackButton.onClick(() => {
         state = 'main';
         getMainButton(state);
+        Telegram.WebApp.MainButton.offClick(shopBtnHanlder);
+        Telegram.WebApp.MainButton.setText('Оформить заказ').show();
+        Telegram.WebApp.MainButton.onClick(orderBtnHandler);
         document.querySelector('.body').classList.remove('isOrder');
-        Telegram.WebApp.BackButton.hide()
+        Telegram.WebApp.BackButton.hide();
     })
     getMainButton(state);
 }
