@@ -153,13 +153,19 @@ const handleAddClick = (e) => {
 
    if (btn.classList.contains('remove')) {
         removeProductFromLS(id);
+        btn.classList.add('animateClick');
         btn.classList.remove('remove');
         btn.textContent = 'Добавить';
-
+        setTimeout(() => {
+            btn.classList.remove('animateClick')
+        }, 310);
    } else {
         setProductInLS(id)
         btn.classList.add('remove', 'animateClick');
         btn.textContent = 'Убрать';
+        setTimeout(() => {
+            btn.classList.remove('animateClick')
+        }, 310);
    }
 }
 

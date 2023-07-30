@@ -380,7 +380,7 @@ template {
 
 @keyframes pulse {
     0% {
-        transform: scale(.95);
+        transform: scale(.97);
         box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
     }
 
@@ -390,7 +390,7 @@ template {
     }
 
     80% {
-        transform: scale(.95);
+        transform: scale(.97);
     }
 
     100% {
@@ -401,7 +401,7 @@ template {
 
 @-webkit-keyframes pulse {
     0% {
-        transform: scale(.95);
+        transform: scale(.97);
         box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
     }
 
@@ -411,7 +411,7 @@ template {
     }
 
     80% {
-        transform: scale(.95);
+        transform: scale(.97);
     }
 
     100% {
@@ -608,7 +608,7 @@ label {
 }
 
 .add-btn.animateClick {
-    animation: pulse 0.3s ease-in-out;
+    animation: pulse 0.25s ease-in-out;
 }
 
 .form {
