@@ -159,8 +159,6 @@ const handleAddClick = (e) => {
 const initTG = () => {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
-    Telegram.WebApp.impactOccurred('heavy');
-    Telegram.WebApp.notificationOccurred('success');
 
     Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
         Telegram.WebApp.sendData(data);
