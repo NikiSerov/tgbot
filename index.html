@@ -22,6 +22,7 @@
     <script type="text/javascript">
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
+        Telegram.WebApp.impactOccurred('heavy');
 
         Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
             Telegram.WebApp.sendData(data);

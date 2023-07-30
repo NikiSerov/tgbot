@@ -137,9 +137,6 @@ const removeProductFromLS = (id) => {
 const handleAddClick = (e) => {
    const btn = e.target;
    const id = btn.getAttribute('data-id');
-   if (Telegram.WebApp) {
-    Telegram.WebApp.selectionChanged();
-   }
 
    if (btn.classList.contains('remove')) {
         removeProductFromLS(id);
