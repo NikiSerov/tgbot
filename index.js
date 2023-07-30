@@ -158,6 +158,7 @@ const renderCart = () => {
 const handleAddClick = (e) => {
    const btn = e.target;
    const id = btn.getAttribute('data-id');
+   Telegram.WebApp.HapticFeedback.impactOccurred('medium');
 
    if (btn.classList.contains('remove')) {
         removeProductFromLS(id);
@@ -183,6 +184,7 @@ const shopBtnHanlder = () => {
     state = 'isOrder';
     getMainButton();
     Telegram.WebApp.BackButton.show()
+    Telegram.WebApp.HapticFeedback.impactOccurred('medium');
 }
 
 const orderBtnHandler = () => {
@@ -196,6 +198,7 @@ const orderBtnHandler = () => {
         contactName,
         contactNumber
     }
+    Telegram.WebApp.HapticFeedback.impactOccurred('heavy');
     Telegram.WebApp.sendData(JSON.stringify(data));
 }
 
