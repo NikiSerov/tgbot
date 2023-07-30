@@ -637,9 +637,20 @@ label {
 }
 
 .orderPage {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+.orderPage-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.orderPage-name {
+    font-size: 18px;
 }
 
 .cart {
@@ -682,10 +693,44 @@ label {
     font-size: 16px;
     padding: 8px 12px;
     background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid transparent;
+    border: 2px solid var(--tg-theme-hint-color);
 }
 
 .input:focus {
     background-color: rgba(255, 255, 255, 1);
     border: 2px solid var(--tg-theme-button-color);
+}
+
+.orderCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--tg-theme-hint-color);
+    padding: 10px;
+}
+
+.orderCard-image-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+}
+
+.orderCard-image {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.orderCard-name {
+    font-size: 14px;
+    width: 50%;
+    font-weight: 500;
+}
+
+.orderCard-price {
+    font-size: 16px;
+    font-weight: 700;
 }

@@ -144,6 +144,15 @@ const removeProductFromLS = (id) => {
     localStorage.setItem('cart', JSON.stringify(newLocalCart));
 }
 
+const renderCart = () => {
+    const cart = document.querySelector('.cart');
+    const productCart = JSON.parse(localStorage.getItem('card'));
+    const orderCardsHTML = productCart.reduce((acc, cv) => {
+        return acc + createOrderCardHTML({...cv});
+    }, '');
+    cart.innerHTML = orderCardsHTML;
+}
+
 const handleAddClick = (e) => {
    const btn = e.target;
    const id = btn.getAttribute('data-id');
@@ -163,6 +172,7 @@ const handleAddClick = (e) => {
         setTimeout(() => {
             btn.classList.remove('animateClick')
         }, 310);
+        renderCart()
    }
 }
 
