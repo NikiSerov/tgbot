@@ -378,10 +378,41 @@ template {
     display: none;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(.9);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 10px 5px var(--tg-theme-button-color);
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 transparent;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        transform: scale(.9);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+    }
+}
+
 * {
     -webkit-tap-highlight-color: transparent;
 }
-
 
 *,
 *::before,
@@ -461,7 +492,7 @@ fieldset {
 
 label {
     display: block;
-} 
+}
 
 .body {
     color: var(--tg-theme-text-color);
@@ -552,17 +583,22 @@ label {
 }
 
 .add-btn {
-    color: var(--tg-theme-button-text-color);
-    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-color);
+    background-color: green;
     padding: 12px 0;
     width: 100%;
     font-size: 16px;
     font-weight: 700;
     border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .add-btn.remove {
-    background-color: rgb(118, 23, 23);
+    background-color: rgb(232, 53, 36);
+}
+
+.add-btn.animateClick {
+    animation: pulse 0.3s ease;
 }
 
 .form {

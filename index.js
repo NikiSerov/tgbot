@@ -158,7 +158,7 @@ const handleAddClick = (e) => {
 
    } else {
         setProductInLS(id)
-        btn.classList.add('remove');
+        btn.classList.add('remove', 'animateClick');
         btn.textContent = 'Убрать';
    }
 }
