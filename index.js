@@ -222,7 +222,7 @@ const initTG = () => {
         getMainButton();
         document.querySelector('.body').classList.remove('isOrder');
         Telegram.WebApp.BackButton.hide();
-        Telegram.WebApp.HapticFeedback.selectionChanged();
+        Telegram.WebApp.HapticFeedback.impactOccurred('soft');
     })
 
     getMainButton();
