@@ -19,6 +19,16 @@
     <div class="main"></div>
     <div class="form"></div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script type="text/javascript">
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+
+        Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
+            const data = "DOROWA BANDIT"
+            Telegram.WebApp.sendData(data);
+            Telegram.WebApp.close();
+        });
+    </script>
     <script src="index.js"></script>
 </body>
 
