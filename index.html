@@ -23,8 +23,7 @@
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
 
-        Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
-            const data = "DOROWA BANDIT"
+        Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
             Telegram.WebApp.sendData(data);
             Telegram.WebApp.close();
         });
