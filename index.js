@@ -157,6 +157,16 @@ const handleAddClick = (e) => {
    }
 }
 
+const initTG = () => {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+
+    Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
+        Telegram.WebApp.sendData(data);
+        Telegram.WebApp.close();
+    });
+}
+
 const renderCards = async () => {
     const cardsContainer = document.querySelector('.cards-container');
     const cardsHTML = await products.reduce((acc, cv) => {
@@ -171,8 +181,7 @@ const renderCards = async () => {
         btn.addEventListener('click', handleAddClick);
     });
 
-    Telegram.WebApp.ready();
-    Telegram.WebApp.expand();
+    initTG();
 }
 
 renderCards();
