@@ -180,8 +180,6 @@ const handleAddClick = (e) => {
 const getMainButton = (state) => {
     if (state === 'isOrder') {
         Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
-            const data = localStorage.getItem('cart');
-            Telegram.WebApp.sendData(data);
         });
     } else {
         Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
