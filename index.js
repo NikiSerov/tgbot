@@ -214,18 +214,17 @@ const getMainButton = () => {
 const initTG = () => {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
+
     localStorage.setItem('cart', []);
 
     Telegram.WebApp.BackButton.onClick(() => {
         state = 'main';
         getMainButton();
-        Telegram.WebApp.MainButton.offClick(shopBtnHanlder);
-        Telegram.WebApp.MainButton.setText('Оформить заказ').show();
-        Telegram.WebApp.MainButton.onClick(orderBtnHandler);
         document.querySelector('.body').classList.remove('isOrder');
         Telegram.WebApp.BackButton.hide();
     })
-    getMainButton(state);
+
+    getMainButton();
 }
 
 const renderCards = async () => {
