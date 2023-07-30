@@ -583,8 +583,8 @@ label {
 }
 
 .add-btn {
-    color: var(--tg-theme-button-color);
-    background-color: green;
+    color: var(--tg-theme-button-text-color);
+    background-color: var(--tg-theme-button-color);
     padding: 12px 0;
     width: 100%;
     font-size: 16px;
