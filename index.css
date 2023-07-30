@@ -636,19 +636,31 @@ label {
     animation: pulse 0.25s ease-in-out;
 }
 
-.form {
+.orderPage {
     display: none;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form {
+    display: flex;
     flex-direction: column;
     padding: 20px 10px;
     gap: 24px;
     animation: fadeIn 0.4s ease;
 }
 
-.body.isForm .form {
+.body.isOrder .orderPage {
     display: flex;
 }
 
-.body.isForm .main {
+.body.isOrder .main {
     display: none;
 }
 

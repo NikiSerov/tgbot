@@ -112,26 +112,36 @@ const createCardHTML = ({id, name, price}) => {
 </div>`;
 }
 
+const createOrderCardHTML = ({id, name, price}) => {
+    return `<div class="orderCard" id="${id}">
+    <div class="orderCard-image-wrapper">
+        <img class="orderCard-image" src="https://i.ibb.co/87MgLXd/shkaf.webp" alt="shkaf" />
+    </div>
+    <h2 class="orderCard-name">${name}</h2>
+    <span class="orderCard-price">${price}₽</span>
+</div>`;
+}
+
 // LS - localStorage
 
 const setProductInLS = (id) => {
     const product = products.find(product => product.id === id);
-    const ls = localStorage.getItem('card');
+    const ls = localStorage.getItem('cart');
     
     if (ls) {
-        const localCard = JSON.parse(ls);
-        const newLocalCard = JSON.stringify([...localCard, product]);
-        localStorage.setItem('card', newLocalCard)
+        const localCart = JSON.parse(ls);
+        const newLocalCart = JSON.stringify([...localCart, product]);
+        localStorage.setItem('cart', newLocalCart)
     } else {
-        const localCard = JSON.stringify([product]);
-        localStorage.setItem('card', localCard)
+        const localCart = JSON.stringify([product]);
+        localStorage.setItem('cart', localCart)
     }
 }
 
 const removeProductFromLS = (id) => {
-    const localCard = JSON.parse(localStorage.getItem('card'));
-    const newLocalCard = localCard.filter(product => product.id !== id);
-    localStorage.setItem('card', JSON.stringify(newLocalCard));
+    const localCart = JSON.parse(localStorage.getItem('cart'));
+    const newLocalCart = localCart.filter(product => product.id !== id);
+    localStorage.setItem('cart', JSON.stringify(newLocalCart));
 }
 
 const handleAddClick = (e) => {
@@ -161,7 +171,12 @@ const initTG = () => {
     Telegram.WebApp.expand();
 
     Telegram.WebApp.MainButton.setText('Оформить заказ').show().onClick(function () {
-        document.querySelector('.body').classList.add('isForm');
+        document.querySelector('.body').classList.add('isOrder');
+        const productCart = JSON.parse(localStorage.getItem('card'));
+        const orderCardsHTML = productCart.reduce((acc, cv) => {
+            return acc + createOrderCardHTML({...cv});
+        }, '');
+        document.querySelector('.cart').innerHTML = orderCardsHTML;
     });
 }
 
