@@ -185,7 +185,16 @@ const shopBtnHanlder = () => {
 }
 
 const orderBtnHandler = () => {
-    const data = localStorage.getItem('cart');
+    const cart = localStorage.getItem('cart');
+    const organiztionName = document.getElementById('organization-name').value;
+    const contactName = document.getElementById('contact-name').value;
+    const contactNumber = document.getElementById('contact-number').value;
+    const data = {
+        cart,
+        organiztionName,
+        contactName,
+        contactNumber
+    }
     Telegram.WebApp.sendData(data);
 }
 
@@ -225,3 +234,4 @@ const renderCards = async () => {
 }
 
 renderCards();
+
