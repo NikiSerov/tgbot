@@ -150,7 +150,7 @@ const renderCart = () => {
     const orderCardsHTML = productCart.reduce((acc, cv) => {
         return acc + createOrderCardHTML({...cv});
     }, '');
-    cart.innerHTML = orderCardsHTML;
+    cart.innerHTML = 'HUY V GOVNE';
 }
 
 const handleAddClick = (e) => {
