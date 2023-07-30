@@ -1,15 +1,15 @@
-// Telegram.WebApp.ready();
-// Telegram.WebApp.expand();
+Telegram.WebApp.ready();
+Telegram.WebApp.expand();
 
-// Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
-//     const data = "DOROWA BANDIT"
-//     Telegram.WebApp.sendData(data);
-//     Telegram.WebApp.close();
-// });
+Telegram.WebApp.MainButton.setText('Мой заказ').show().onClick(function () {
+    const data = "DOROWA BANDIT"
+    Telegram.WebApp.sendData(data);
+    Telegram.WebApp.close();
+});
 
 
-// Telegram.WebApp.BackButton.isVisible(true);
-// Telegram.WebApp.BackButton.show();
+Telegram.WebApp.BackButton.isVisible(true);
+Telegram.WebApp.BackButton.show();
 
 const products = [
     {
@@ -150,7 +150,7 @@ const removeProductFromLS = (id) => {
 const handleAddClick = (e) => {
    const btn = e.target;
    const id = btn.getAttribute('data-id');
-   Telegram.WebApp.HapticFeedback.impactOccured('heavy');
+   Telegram.WebApp.selectionChanged();
 
    if (btn.classList.contains('remove')) {
         removeProductFromLS(id);
